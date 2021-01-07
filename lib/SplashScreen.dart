@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:kool_app_ui/LoginScreen.dart';
 
@@ -25,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(color: Colors.yellowAccent),
+            decoration: BoxDecoration(color: Color(0xffffd400)),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
