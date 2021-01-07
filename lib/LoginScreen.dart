@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:kool_app_ui/HomeScreen.dart';
+import 'package:kool_app_ui/Register.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
               width: MediaQuery.of(context).size.width,
             ),
             Padding(
-              padding: EdgeInsets.only(top: 120, left: 10, right: 10),
+              padding: EdgeInsets.only(top: 120, left: 20, right: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,10 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
+                                  builder: (context) => RegisterScreen()));
                         },
                         child: Text(
-                          "Already have an Account ?",
+                          "Don't have an Account ?",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.grey[700],
