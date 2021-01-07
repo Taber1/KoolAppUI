@@ -66,23 +66,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                   borderRadius: BorderRadius.circular(5)),
                               labelText: 'Email',
                               hintText: "Enter Email",
-                              labelStyle: TextStyle(color: Color(0xffffd400)),
+                              labelStyle: TextStyle(
+                                  color: Color(0xffffd400),
+                                  fontWeight: FontWeight.bold),
                             )),
                             SizedBox(
                               height: 20,
                             ),
                             TextField(
                                 decoration: InputDecoration(
-                                    // enabledBorder: OutlineInputBorder(
-                                    //     borderSide:
-                                    //         BorderSide(color: Colors.grey),
-                                    //     borderRadius: BorderRadius.circular(5)),
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(5)),
                                     labelText: 'Password',
                                     hintText: "******",
-                                    labelStyle:
-                                        TextStyle(color: Color(0xffffd400)),
+                                    labelStyle: TextStyle(
+                                        color: Color(0xffffd400),
+                                        fontWeight: FontWeight.bold),
                                     suffixIcon: Icon(Icons.remove_red_eye))),
                             SizedBox(
                               height: 30,
@@ -122,9 +121,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
                         onTap: () {
@@ -133,9 +133,49 @@ class _LoginScreenState extends State<LoginScreen> {
                               MaterialPageRoute(
                                   builder: (context) => HomeScreen()));
                         },
-                        child: Text("Forget Password"),
+                        child: Text(
+                          "Forget Password?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[700],
+                              fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
+                        child: Text(
+                          "Already have an Account ?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[700],
+                              fontStyle: FontStyle.italic),
+                        ),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
+                    },
+                    child: Text(
+                      "Go to HomePage",
+                      style: TextStyle(
+                          color: Color(0xffffd400),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    ),
                   )
                 ],
               ),
