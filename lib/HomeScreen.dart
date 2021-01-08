@@ -143,9 +143,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icons.sort,
                         color: Color(0xffffd400),
                       ))),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 105,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (BuildContext context, int index) {
+                      return SmallCard();
+                    }),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SmallCard()
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SmallCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Container(
+        height: 100,
+        width: 100,
+        decoration: BoxDecoration(color: Color(0xffffd400)),
       ),
     );
   }
