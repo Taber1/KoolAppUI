@@ -10,10 +10,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(170.0),
+          preferredSize: Size.fromHeight(140.0),
           child: Container(
             decoration: BoxDecoration(
-              // borderRadius: BorderRadius.circular(5.0),
+              // borderRadius: BorderRadius.circular(50.0),
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
@@ -26,8 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: <Widget>[
                 AppBar(
+                  elevation: 0,
                   centerTitle: true,
                   automaticallyImplyLeading: false,
+                  backgroundColor: Colors.white,
+                  // backgroundColor: Color(0xffffd400),
                   title: RichText(
                     text: TextSpan(
                       style: TextStyle(
@@ -36,81 +39,44 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'DOC ',
+                            text: 'KOOL',
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Color(0xffffd400),
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
-                            text: 'FIST',
+                            text: ' APP',
                             style: TextStyle(
                                 color: Colors.deepOrangeAccent[700],
                                 fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
-                  leading: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: <Widget>[
-                        Positioned(
-                          bottom: 6,
-                          right: 1,
-                          child: CircleAvatar(
-                              child: IconButton(
-                            icon: Icon(Icons.person),
-                            color: Colors.indigo,
-                            onPressed: () {
-                              // _scaffoldKey.currentState.openDrawer();
-                            },
-                          )),
-                        ),
-                        Positioned(
-                          bottom: 1,
-                          right: 1,
-                          child: CircleAvatar(
-                              radius: 8,
-                              child: Icon(
-                                Icons.menu,
-                                size: 10,
-                              )),
-                        ),
-                      ]),
-                  backgroundColor: Color(0xffffd400),
+                  leading: Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: Stack(
+                        alignment: Alignment.centerLeft,
+                        children: <Widget>[
+                          CircleAvatar(
+                            backgroundColor: Colors.grey[200],
+                            radius: 20,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Image.asset(
+                              'assets/images/logo-kool-Jaune-png.png',
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          )
+                        ]),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10, left: 20, right: 20),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            InkWell(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //         builder: (context) => location()));
-                                },
-                                child: Icon(Icons.add_location)),
-                            SizedBox(width: 0),
-                            InkWell(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //         builder: (context) => location()));
-                                },
-                                child: Text("Karachi")),
-                            InkWell(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //         builder: (context) => location()));
-                                },
-                                child: Icon(Icons.arrow_drop_down))
-                          ],
-                        ),
-                        SizedBox(height: 10),
                         TextFormField(
                             onTap: () {
                               // Navigator.push(
