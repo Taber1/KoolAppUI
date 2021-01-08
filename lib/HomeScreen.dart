@@ -31,45 +31,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   automaticallyImplyLeading: false,
                   backgroundColor: Colors.white,
                   // backgroundColor: Color(0xffffd400),
-                  title: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: 'KOOL',
-                            style: TextStyle(
-                                color: Color(0xffffd400),
-                                fontWeight: FontWeight.bold)),
-                        TextSpan(
-                            text: ' APP',
-                            style: TextStyle(
-                                color: Colors.deepOrangeAccent[700],
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ),
-                  leading: Padding(
-                    padding: EdgeInsets.only(left: 15.0),
-                    child: Stack(
-                        alignment: Alignment.centerLeft,
-                        children: <Widget>[
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
                           CircleAvatar(
+                            radius: 25,
                             backgroundColor: Colors.grey[200],
-                            radius: 20,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Image.asset(
-                              'assets/images/logo-kool-Jaune-png.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.fitHeight,
-                            ),
+                          Image.asset(
+                            'assets/images/logo-kool-Jaune-png.png',
+                            height: 50,
                           )
-                        ]),
+                        ],
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: 'KOOL',
+                                style: TextStyle(
+                                    color: Color(0xffffd400),
+                                    fontWeight: FontWeight.bold)),
+                            TextSpan(
+                                text: ' APP',
+                                style: TextStyle(
+                                    color: Colors.deepOrangeAccent[700],
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -100,7 +98,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )),
       body: Center(
-        child: Text("HOME"),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.grey[200],
+            ),
+            Image.asset(
+              'assets/images/logo-kool-Jaune-png.png',
+              height: 80,
+            )
+          ],
+        ),
       ),
     );
   }
