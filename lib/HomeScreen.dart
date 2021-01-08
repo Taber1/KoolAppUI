@@ -32,20 +32,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Colors.white,
                   // backgroundColor: Color(0xffffd400),
                   title: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: Colors.grey[200],
-                          ),
-                          Image.asset(
-                            'assets/images/logo-kool-Jaune-png.png',
-                            height: 50,
-                          )
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundColor: Colors.grey[200],
+                            ),
+                            Image.asset(
+                              'assets/images/logo-kool-Jaune-png.png',
+                              height: 50,
+                            )
+                          ],
+                        ),
                       ),
                       RichText(
                         text: TextSpan(
@@ -67,11 +71,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
+                      Icon(
+                        Icons.person_outline,
+                        color: Color(0xffffd400),
+                        size: 35,
+                      )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10, left: 20, right: 20),
+                  padding: EdgeInsets.only(top: 5, left: 20, right: 20),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
