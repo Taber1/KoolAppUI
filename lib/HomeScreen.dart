@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,116 +10,68 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(140.0),
-          child: Container(
-            decoration: BoxDecoration(
-              // borderRadius: BorderRadius.circular(50.0),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  offset: Offset(0.0, 1.0), //(x,y)
-                  blurRadius: 4.0,
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: Icon(
+          FontAwesomeIcons.userAlt,
+          color: Color(0xffffd400),
+        ),
+        title: Image.asset(
+          'assets/images/logo-kool-Jaune-png.png',
+          color: Color(0xffffd400),
+          height: 65,
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                IconButton(
+                  icon: Icon(FontAwesomeIcons.shoppingCart),
+                  onPressed: () {},
+                  iconSize: 28,
                 ),
-              ],
-            ),
-            child: Column(
-              children: <Widget>[
-                AppBar(
-                  elevation: 0,
-                  centerTitle: true,
-                  automaticallyImplyLeading: false,
-                  backgroundColor: Colors.white,
-                  // backgroundColor: Color(0xffffd400),
-                  title: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.grey[200],
-                            ),
-                            Image.asset(
-                              'assets/images/logo-kool-Jaune-png.png',
-                              height: 50,
-                            )
-                          ],
-                        ),
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: 'KOOL',
-                                style: TextStyle(
-                                    color: Color(0xffffd400),
-                                    fontWeight: FontWeight.bold)),
-                            TextSpan(
-                                text: ' APP',
-                                style: TextStyle(
-                                    color: Colors.deepOrangeAccent[700],
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                      ),
-                      Icon(
-                        Icons.person_outline,
-                        color: Color(0xffffd400),
-                        size: 35,
-                      )
-                    ],
+                CircleAvatar(
+                  radius: 7,
+                  backgroundColor: Color(0xffffd400),
+                  child: Text(
+                    "0",
+                    style: TextStyle(color: Colors.white),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        TextFormField(
-                            onTap: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => search()));
-                            },
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey[300]),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10.0)),
-                              ),
-                              prefixIcon: Icon(Icons.search),
-                              hintText:
-                                  'Doctors, Hospitals, Specialist, Services, Dispenceries',
-                            ))
-                      ]),
                 )
               ],
             ),
-          )),
-      body: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.grey[200],
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+          child: Center(
+            child: Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                InkWell(
+                  child: Icon(
+                    FontAwesomeIcons.shoppingCart,
+                    size: 30,
+                  ),
+                  onTap: () {},
+                ),
+                CircleAvatar(
+                  radius: 5,
+                  backgroundColor: Color(0xffffd400),
+                  child: Text(
+                    "0",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
             ),
-            Image.asset(
-              'assets/images/logo-kool-Jaune-png.png',
-              height: 80,
-            )
-          ],
+          ),
         ),
       ),
     );
