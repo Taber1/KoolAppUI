@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   RaisedButton(
                     color: Colors.transparent,
@@ -114,8 +114,35 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Expanded(
+                    child: Text(
+                      "a Marsa Mode, P9, Tunisie",
+                      style: TextStyle(color: Colors.grey),
+                      softWrap: true,
+                    ),
+                  )
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      hintText: 'Rechercher des restaurants ou des aliments',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.black,
+                      ),
+                      suffixIcon: Icon(
+                        Icons.sort,
+                        color: Color(0xffffd400),
+                      ))),
             ],
           ),
         ),
