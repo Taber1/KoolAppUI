@@ -26,52 +26,53 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: <Widget>[
                 AppBar(
-                  elevation: 0,
-                  centerTitle: true,
-                  automaticallyImplyLeading: false,
-                  backgroundColor: Colors.white,
-                  // backgroundColor: Color(0xffffd400),
-                  title: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: 'KOOL',
+                    elevation: 0,
+                    // centerTitle: true,
+                    automaticallyImplyLeading: false,
+                    backgroundColor: Colors.white,
+                    // backgroundColor: Color(0xffffd400),
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 15.0),
+                          child: Stack(
+                              alignment: Alignment.centerLeft,
+                              children: <Widget>[
+                                CircleAvatar(
+                                  backgroundColor: Colors.grey[200],
+                                  radius: 20,
+                                ),
+                                Image.asset(
+                                  'assets/images/logo-kool-Jaune-png.png',
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ]),
+                        ),
+                        RichText(
+                          text: TextSpan(
                             style: TextStyle(
-                                color: Color(0xffffd400),
-                                fontWeight: FontWeight.bold)),
-                        TextSpan(
-                            text: ' APP',
-                            style: TextStyle(
-                                color: Colors.deepOrangeAccent[700],
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ),
-                  leading: Padding(
-                    padding: EdgeInsets.only(left: 15.0),
-                    child: Stack(
-                        alignment: Alignment.centerLeft,
-                        children: <Widget>[
-                          CircleAvatar(
-                            backgroundColor: Colors.grey[200],
-                            radius: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Image.asset(
-                              'assets/images/logo-kool-Jaune-png.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.fitHeight,
+                              fontSize: 20,
+                              color: Colors.black,
                             ),
-                          )
-                        ]),
-                  ),
-                ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: 'KOOL',
+                                  style: TextStyle(
+                                      color: Color(0xffffd400),
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: ' APP',
+                                  style: TextStyle(
+                                      color: Colors.deepOrangeAccent[700],
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )),
                 Padding(
                   padding: EdgeInsets.only(top: 10, left: 20, right: 20),
                   child: Column(
