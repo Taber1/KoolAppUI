@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+          padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: Column(
             children: [
               SizedBox(
@@ -58,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 children: [
                   RaisedButton(
+                    color: Colors.transparent,
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -73,16 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                       ),
-                      height: MediaQuery.of(context).size.height * 0.04,
+                      height: MediaQuery.of(context).size.height * 0.035,
                       width: MediaQuery.of(context).size.width * 0.25,
                       alignment: Alignment.center,
                       child: const Text(
                         'A emporter',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
+                        style: TextStyle(color: Colors.black, fontSize: 17),
                       ),
                     ),
                   ),
@@ -90,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 10,
                   ),
                   RaisedButton(
+                    color: Colors.transparent,
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -105,16 +104,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Color(0xffffd400),
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                       ),
-                      height: MediaQuery.of(context).size.height * 0.04,
+                      height: MediaQuery.of(context).size.height * 0.035,
                       width: MediaQuery.of(context).size.width * 0.25,
                       alignment: Alignment.center,
                       child: const Text(
                         'Livraison',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
+                        style: TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),
                   ),
