@@ -88,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 30,
                             ),
                             RaisedButton(
+                              color: Colors.transparent,
                               onPressed: () {
                                 Navigator.push(
                                     context,

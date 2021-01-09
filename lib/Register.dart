@@ -103,6 +103,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               height: 30,
                             ),
                             RaisedButton(
+                              color: Colors.transparent,
                               onPressed: () {
                                 Navigator.push(
                                     context,

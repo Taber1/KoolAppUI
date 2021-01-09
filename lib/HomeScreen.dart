@@ -53,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
@@ -179,6 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 height: 170,
                 child: Swiper(
+                  duration: 1,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
                     return new Container(
@@ -208,20 +210,20 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 15,
               ),
-              // EachItemCard(),
-              // SizedBox(
-              //   height: 15,
-              // ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.38,
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (BuildContext context, int index) {
-                      return EachItemCard();
-                    }),
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return EachItemCard();
+                  },
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      height: 10,
+                    );
+                  },
+                ),
               )
             ],
           ),
@@ -242,6 +244,7 @@ class EachItemCard extends StatelessWidget {
         color: Color(0xffffd400),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
