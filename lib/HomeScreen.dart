@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      endDrawer: Drawer(),
+      endDrawer: FilterDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0),
@@ -325,8 +325,51 @@ class FilterDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                "effacer le filtre",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "livrason ou a emporter",
+              style: TextStyle(
+                  color: Color(0xffffd400),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.hamburger),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Livraison",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 100,
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
