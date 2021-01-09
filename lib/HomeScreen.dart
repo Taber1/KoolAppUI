@@ -321,6 +321,17 @@ class EachItemCard extends StatelessWidget {
   }
 }
 
+class FilterDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [],
+      ),
+    );
+  }
+}
+
 // class SmallHorizontalCard extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
