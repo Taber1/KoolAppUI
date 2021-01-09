@@ -330,6 +330,7 @@ class FilterDrawer extends StatefulWidget {
 
 class _FilterDrawerState extends State<FilterDrawer> {
   FilterOne filterone = FilterOne.Livraison;
+  bool ouvert = false;
 
   @override
   Widget build(BuildContext context) {
@@ -433,14 +434,21 @@ class _FilterDrawerState extends State<FilterDrawer> {
                 SizedBox(
                   width: 185,
                 ),
-                Radio(
-                    value: FilterOne.Livraison,
-                    groupValue: filterone,
-                    onChanged: (value) {
-                      setState(() {
-                        filterone = value;
-                      });
-                    })
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      ouvert != ouvert;
+                    });
+                  },
+                  child: Radio(
+                      value: ouvert,
+                      groupValue: ouvert,
+                      onChanged: (value) {
+                        setState(() {
+                          ouvert = value;
+                        });
+                      }),
+                )
               ],
             ),
           ],
