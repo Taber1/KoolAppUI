@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -169,7 +170,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       return BigHorizontalCard();
                     }),
               ),
-              BigHorizontalCard()
             ],
           ),
         ),
@@ -196,12 +196,25 @@ class BigHorizontalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
-      child: Container(
-        // height: MediaQuery.of(context).size.height * 0.22,
-        width: MediaQuery.of(context).size.width * 0.85,
-        decoration: BoxDecoration(color: Color(0xffffd400)),
-      ),
-    );
+        padding: const EdgeInsets.all(5.0),
+        child: CarouselSlider(
+          options: CarouselOptions(scrollDirection: Axis.horizontal),
+          items: [
+            Container(
+              // height: MediaQuery.of(context).size.height * 0.22,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                  color: Color(0xffffd400),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+          ],
+        )
+        // Container(
+        //   // height: MediaQuery.of(context).size.height * 0.22,
+        //   width: MediaQuery.of(context).size.width * 0.8,
+        //   decoration: BoxDecoration(
+        //       color: Color(0xffffd400), borderRadius: BorderRadius.circular(10)),
+        // ),
+        );
   }
 }
