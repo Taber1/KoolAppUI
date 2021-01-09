@@ -321,12 +321,21 @@ class EachItemCard extends StatelessWidget {
   }
 }
 
-class FilterDrawer extends StatelessWidget {
+enum FilterOne { Livraison, Emporter }
+
+class FilterDrawer extends StatefulWidget {
+  @override
+  _FilterDrawerState createState() => _FilterDrawerState();
+}
+
+class _FilterDrawerState extends State<FilterDrawer> {
+  FilterOne filterone = FilterOne.Livraison;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(top: 8.0, right: 0, left: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -364,10 +373,76 @@ class FilterDrawer extends StatelessWidget {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
-                  width: 100,
+                  width: 130,
                 ),
+                Radio(
+                    value: FilterOne.Livraison,
+                    groupValue: filterone,
+                    onChanged: (value) {
+                      setState(() {
+                        filterone = value;
+                      });
+                    })
               ],
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Icon(FontAwesomeIcons.hamburger),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "A emporter",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 113,
+                ),
+                Radio(
+                    value: FilterOne.Emporter,
+                    groupValue: filterone,
+                    onChanged: (value) {
+                      setState(() {
+                        filterone = value;
+                      });
+                    })
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Restaurants ouvert",
+              style: TextStyle(
+                  color: Color(0xffffd400),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Text(
+                  "Ouvert",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  width: 185,
+                ),
+                Radio(
+                    value: FilterOne.Livraison,
+                    groupValue: filterone,
+                    onChanged: (value) {
+                      setState(() {
+                        filterone = value;
+                      });
+                    })
+              ],
+            ),
           ],
         ),
       ),
