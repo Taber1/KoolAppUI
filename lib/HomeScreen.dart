@@ -53,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 10,
@@ -196,11 +197,37 @@ class _HomeScreenState extends State<HomeScreen> {
                   viewportFraction: 0.8,
                   scale: 0.9,
                 ),
-              )
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Livraison la plus repide",
+                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              EachItemCard(),
+              SizedBox(
+                height: 5,
+              ),
+              EachItemCard()
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class EachItemCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.35,
+      width: MediaQuery.of(context).size.width * 0.9,
+      color: Color(0xffffd400),
     );
   }
 }
