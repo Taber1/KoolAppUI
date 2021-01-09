@@ -153,13 +153,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
-                      return SmallCard();
+                      return SmallHorizontalCard();
                     }),
               ),
               SizedBox(
                 height: 10,
               ),
-              SmallCard()
+              Container(
+                height: 200,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (BuildContext context, int index) {
+                      return BigHorizontalCard();
+                    }),
+              ),
+              BigHorizontalCard()
             ],
           ),
         ),
@@ -168,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class SmallCard extends StatelessWidget {
+class SmallHorizontalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -176,6 +186,20 @@ class SmallCard extends StatelessWidget {
       child: Container(
         height: 100,
         width: 100,
+        decoration: BoxDecoration(color: Color(0xffffd400)),
+      ),
+    );
+  }
+}
+
+class BigHorizontalCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Container(
+        // height: MediaQuery.of(context).size.height * 0.22,
+        width: MediaQuery.of(context).size.width * 0.85,
         decoration: BoxDecoration(color: Color(0xffffd400)),
       ),
     );
