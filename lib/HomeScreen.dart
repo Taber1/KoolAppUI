@@ -9,9 +9,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -33,15 +35,22 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 IconButton(
                   icon: Icon(FontAwesomeIcons.shoppingCart),
-                  onPressed: () {},
+                  onPressed: () {
+                    _key.currentState.openEndDrawer();
+                  },
                   iconSize: 28,
                 ),
-                CircleAvatar(
-                  radius: 7,
-                  backgroundColor: Color(0xffffd400),
-                  child: Text(
-                    "0",
-                    style: TextStyle(color: Colors.white),
+                InkWell(
+                  onTap: () {
+                    _key.currentState.openEndDrawer();
+                  },
+                  child: CircleAvatar(
+                    radius: 7,
+                    backgroundColor: Color(0xffffd400),
+                    child: Text(
+                      "0",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 )
               ],
@@ -49,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      endDrawer: Drawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0),
