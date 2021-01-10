@@ -22,6 +22,12 @@ class _EachItemScreenState extends State<EachItemScreen> {
                     'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg',
                     fit: BoxFit.cover,
                   ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [Text("Nigiri Saumon")],
                 )
               ],
             ),
