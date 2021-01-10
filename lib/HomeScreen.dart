@@ -1,12 +1,10 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kool_app_ui/DrawerScreen.dart';
-
+import 'package:kool_app_ui/EachItemScreen.dart';
 import 'EndDrawerScreen.dart';
 import 'NoItemPanierScreen.dart';
-import 'PanierScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -252,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -264,76 +262,82 @@ class _HomeScreenState extends State<HomeScreen> {
 class EachItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.38,
-      width: MediaQuery.of(context).size.width * 0.9,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xffffd400),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 200,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg'))),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(' Benkay Sushi',
-              style: TextStyle(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => EachItemScreen()));
+      },
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.38,
+        width: MediaQuery.of(context).size.width * 0.9,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Color(0xffffd400),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 200,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg'))),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(' Benkay Sushi',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500)),
+            Flexible(
+                child: Text(
+              " Retrouvez toutes vos envies dans nos sushis. BENKAY est une chaine de r",
+              softWrap: true,
+              style: TextStyle(color: Colors.grey),
+            )),
+            SizedBox(
+              height: 2,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.star_outline,
                   color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500)),
-          Flexible(
-              child: Text(
-            " Retrouvez toutes vos envies dans nos sushis. BENKAY est une chaine de r",
-            softWrap: true,
-            style: TextStyle(color: Colors.grey),
-          )),
-          SizedBox(
-            height: 2,
-          ),
-          Row(
-            children: [
-              Icon(
-                Icons.star_outline,
-                color: Colors.black,
-              ),
-              Icon(
-                Icons.star_outline,
-                color: Colors.black,
-              ),
-              Icon(
-                Icons.star_outline,
-                color: Colors.black,
-              ),
-              Icon(
-                Icons.star_outline,
-                color: Colors.black,
-              ),
-              Icon(
-                Icons.star_outline,
-                color: Colors.black,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 2,
-          ),
-          Text(
-            " 1.00 Km",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          )
-        ],
+                ),
+                Icon(
+                  Icons.star_outline,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.star_outline,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.star_outline,
+                  color: Colors.black,
+                ),
+                Icon(
+                  Icons.star_outline,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Text(
+              " 1.00 Km",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            )
+          ],
+        ),
       ),
     );
   }
