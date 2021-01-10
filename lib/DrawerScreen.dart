@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kool_app_ui/HomeScreen.dart';
 import 'package:kool_app_ui/NotificationScreen.dart';
 
+import 'AlimentsPreferesScreen.dart';
 import 'LoginScreen.dart';
 import 'ParametresScreen.dart';
 
@@ -58,7 +59,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AlimentsPreferesScreen()));
+            },
             title: Text(
               "Aliments Preferes",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),

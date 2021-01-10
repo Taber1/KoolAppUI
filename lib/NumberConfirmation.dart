@@ -12,20 +12,23 @@ class _NumberSuccessfulState extends State<NumberSuccessful> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Wrap(alignment: WrapAlignment.center, children: [
-          Icon(
-            Icons.check_circle,
-            color: Color(0xffffd400),
-            size: 200,
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Text(
-            "votre numero a verivie avec succes",
-            style: TextStyle(color: Colors.grey, fontSize: 20),
-          )
-        ]),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.check_circle,
+                color: Color(0xffffd400),
+                size: 200,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "votre numero a verivie avec succes",
+                style: TextStyle(color: Colors.grey, fontSize: 20),
+              )
+            ]),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
