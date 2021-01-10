@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kool_app_ui/DrawerScreen.dart';
 
 import 'EndDrawerScreen.dart';
+import 'PanierScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -42,11 +43,21 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 IconButton(
                   icon: Icon(FontAwesomeIcons.shoppingCart),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PanierScreen()));
+                  },
                   iconSize: 28,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PanierScreen()));
+                  },
                   child: CircleAvatar(
                     radius: 7,
                     backgroundColor: Color(0xffffd400),
