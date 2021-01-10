@@ -140,7 +140,7 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
               width: MediaQuery.of(context).size.width * 0.9,
               alignment: Alignment.center,
               child: const Text(
-                "Page d'acceuil",
+                "Mes commandes",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.black,
