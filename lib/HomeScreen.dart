@@ -330,128 +330,335 @@ class FilterDrawer extends StatefulWidget {
 
 class _FilterDrawerState extends State<FilterDrawer> {
   FilterOne filterone = FilterOne.Livraison;
-  bool ouvert = false;
+  bool ouvertOpt = false;
+  bool toutOpt = false;
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 8.0, right: 0, left: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                "effacer le filtre",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0, right: 0, left: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 50,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "livrason ou a emporter",
-              style: TextStyle(
-                  color: Color(0xffffd400),
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Icon(FontAwesomeIcons.hamburger),
-                SizedBox(
-                  width: 10,
+              Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "effacer le filtre",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  ),
                 ),
-                Text(
-                  "Livraison",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 130,
-                ),
-                Radio(
-                    value: FilterOne.Livraison,
-                    groupValue: filterone,
-                    onChanged: (value) {
-                      setState(() {
-                        filterone = value;
-                      });
-                    })
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Icon(FontAwesomeIcons.hamburger),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "A emporter",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 113,
-                ),
-                Radio(
-                    value: FilterOne.Emporter,
-                    groupValue: filterone,
-                    onChanged: (value) {
-                      setState(() {
-                        filterone = value;
-                      });
-                    })
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Restaurants ouvert",
-              style: TextStyle(
-                  color: Color(0xffffd400),
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Text(
-                  "Ouvert",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 185,
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      ouvert != ouvert;
-                    });
-                  },
-                  child: Radio(
-                      value: ouvert,
-                      groupValue: ouvert,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "livrason ou a emporter",
+                style: TextStyle(
+                    color: Color(0xffffd400),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Livraison",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 130,
+                  ),
+                  Radio(
+                      value: FilterOne.Livraison,
+                      groupValue: filterone,
                       onChanged: (value) {
                         setState(() {
-                          ouvert = value;
+                          filterone = value;
                         });
-                      }),
-                )
-              ],
-            ),
-          ],
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "A emporter",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 113,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Restaurants ouvert",
+                style: TextStyle(
+                    color: Color(0xffffd400),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Ouvert",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 197,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        ouvertOpt = !ouvertOpt;
+                      });
+                    },
+                    child: ouvertOpt
+                        ? Icon(
+                            Icons.radio_button_checked,
+                            color: Color(0xffffd400),
+                            size: 20,
+                          )
+                        : Icon(
+                            Icons.radio_button_unchecked,
+                            color: Colors.grey[700],
+                            size: 21.5,
+                          ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                "Categories",
+                style: TextStyle(
+                    color: Color(0xffffd400),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Tout",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 215,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        toutOpt = !toutOpt;
+                      });
+                    },
+                    child: toutOpt
+                        ? Icon(
+                            Icons.radio_button_checked,
+                            color: Color(0xffffd400),
+                            size: 20,
+                          )
+                        : Icon(
+                            Icons.radio_button_unchecked,
+                            color: Colors.grey[700],
+                            size: 21.5,
+                          ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Sushis",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 149,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Pizzas",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 149,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Sandwichs",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 115,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Burgers",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 139,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Tacos",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 153,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Icon(FontAwesomeIcons.hamburger),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Pates",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 155,
+                  ),
+                  Radio(
+                      value: FilterOne.Emporter,
+                      groupValue: filterone,
+                      onChanged: (value) {
+                        setState(() {
+                          filterone = value;
+                        });
+                      })
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
