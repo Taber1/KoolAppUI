@@ -3,6 +3,8 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:kool_app_ui/HomeScreen.dart';
 import 'package:kool_app_ui/Register.dart';
 
+import 'NumberScreen.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -93,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => HomeScreen()));
+                                        builder: (context) => NumberScreen()));
                               },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50.0)),
