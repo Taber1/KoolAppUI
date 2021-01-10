@@ -37,15 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 IconButton(
                   icon: Icon(FontAwesomeIcons.shoppingCart),
-                  onPressed: () {
-                    _key.currentState.openEndDrawer();
-                  },
+                  onPressed: () {},
                   iconSize: 28,
                 ),
                 InkWell(
-                  onTap: () {
-                    _key.currentState.openEndDrawer();
-                  },
+                  onTap: () {},
                   child: CircleAvatar(
                     radius: 7,
                     backgroundColor: Color(0xffffd400),
@@ -155,9 +151,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icons.search,
                         color: Colors.black,
                       ),
-                      suffixIcon: Icon(
-                        Icons.sort,
-                        color: Color(0xffffd400),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          _key.currentState.openEndDrawer();
+                        },
+                        icon: Icon(Icons.sort),
                       ))),
               SizedBox(
                 height: 10,
