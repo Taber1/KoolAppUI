@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kool_app_ui/HomeScreen.dart';
+import 'package:kool_app_ui/NotificationScreen.dart';
 
 import 'LoginScreen.dart';
 
@@ -37,7 +38,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NotificationScreen()));
+            },
             title: Text(
               "Les notifications",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
