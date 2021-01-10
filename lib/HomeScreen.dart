@@ -506,7 +506,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
               ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.hamburger),
+                  Icon(FontAwesomeIcons.bacon),
                   SizedBox(
                     width: 10,
                   ),
@@ -532,7 +532,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
               ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.hamburger),
+                  Icon(FontAwesomeIcons.pizzaSlice),
                   SizedBox(
                     width: 10,
                   ),
@@ -558,7 +558,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
               ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.hamburger),
+                  Icon(FontAwesomeIcons.cheese),
                   SizedBox(
                     width: 10,
                   ),
@@ -610,7 +610,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
               ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.hamburger),
+                  Icon(FontAwesomeIcons.hotdog),
                   SizedBox(
                     width: 10,
                   ),
@@ -636,7 +636,7 @@ class _FilterDrawerState extends State<FilterDrawer> {
               ),
               Row(
                 children: [
-                  Icon(FontAwesomeIcons.hamburger),
+                  Icon(Icons.fastfood),
                   SizedBox(
                     width: 10,
                   ),
