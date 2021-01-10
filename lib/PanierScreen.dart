@@ -43,7 +43,8 @@ class _PanierScreenState extends State<PanierScreen> {
                 height: 130,
                 width: MediaQuery.of(context).size.width * 0.95,
                 decoration: BoxDecoration(
-                    color: Colors.amber,
+                    border: Border.all(color: Colors.grey),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Row(
                   children: [
@@ -54,7 +55,9 @@ class _PanierScreenState extends State<PanierScreen> {
                       height: 120,
                       width: 120,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg')),
                           borderRadius: BorderRadius.circular(20)),
                     ),
                     SizedBox(
@@ -101,7 +104,7 @@ class _PanierScreenState extends State<PanierScreen> {
                         IconButton(
                           icon: Icon(
                             Icons.remove_circle_outline,
-                            size: 25,
+                            size: 30,
                           ),
                           onPressed: () => setState(() {
                             _itemCount == 1 ? null : _itemCount--;
@@ -111,13 +114,13 @@ class _PanierScreenState extends State<PanierScreen> {
                           _itemCount.toString(),
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 17,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         IconButton(
                             icon: Icon(
                               Icons.add_circle_outline,
-                              size: 25,
+                              size: 30,
                             ),
                             onPressed: () => setState(() => _itemCount++))
                       ],
