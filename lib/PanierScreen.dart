@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:number_inc_dec/number_inc_dec.dart';
 
 class PanierScreen extends StatefulWidget {
   @override
@@ -6,6 +7,7 @@ class PanierScreen extends StatefulWidget {
 }
 
 class _PanierScreenState extends State<PanierScreen> {
+  int _itemCount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +89,37 @@ class _PanierScreenState extends State<PanierScreen> {
                               ),
                             ),
                           ]),
-                        )
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.remove_circle_outline,
+                            size: 25,
+                          ),
+                          onPressed: () => setState(() {
+                            _itemCount == 1 ? null : _itemCount--;
+                          }),
+                        ),
+                        Text(
+                          _itemCount.toString(),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        IconButton(
+                            icon: Icon(
+                              Icons.add_circle_outline,
+                              size: 25,
+                            ),
+                            onPressed: () => setState(() => _itemCount++))
                       ],
                     )
                   ],
