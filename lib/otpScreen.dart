@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kool_app_ui/NumberConfirmation.dart';
 
 import 'HomeScreen.dart';
 
@@ -25,8 +26,8 @@ class _OtpScreenState extends State<OtpScreen> {
         child: RaisedButton(
           color: Colors.transparent,
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NumberSuccessful()));
           },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
