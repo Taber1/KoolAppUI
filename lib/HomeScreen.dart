@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kool_app_ui/DrawerScreen.dart';
 
 import 'EndDrawerScreen.dart';
 
@@ -20,8 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: Icon(
-          FontAwesomeIcons.userAlt,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DrawerScreen()));
+          },
+          icon: Icon(FontAwesomeIcons.userAlt),
           color: Color(0xffffd400),
         ),
         title: Image.asset(
@@ -57,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       endDrawer: FilterDrawer(),
-      drawer: Drawer(),
+      drawer: DrawerScreen(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0),
