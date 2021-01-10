@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kool_app_ui/otpScreen.dart';
+import 'package:kool_app_ui/OtpScreen.dart';
 
 class NumberScreen extends StatefulWidget {
   @override
