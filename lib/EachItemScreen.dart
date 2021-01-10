@@ -18,9 +18,9 @@ class _EachItemScreenState extends State<EachItemScreen> {
                 Container(
                   height: MediaQuery.of(context).size.height * 0.37,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    // image: DecorationImage(image: NetworkImage(url))
+                  child: Image.network(
+                    'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg',
+                    fit: BoxFit.cover,
                   ),
                 )
               ],
