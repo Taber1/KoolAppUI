@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'DrawerScreen.dart';
+import 'EndDrawerScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
