@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kool_app_ui/DrawerScreen.dart';
 
 import 'EndDrawerScreen.dart';
+import 'NoItemPanierScreen.dart';
 import 'PanierScreen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PanierScreen()));
+                            builder: (context) => NoItemPanierScreen()));
                   },
                   iconSize: 28,
                 ),
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PanierScreen()));
+                            builder: (context) => NoItemPanierScreen()));
                   },
                   child: CircleAvatar(
                     radius: 7,
