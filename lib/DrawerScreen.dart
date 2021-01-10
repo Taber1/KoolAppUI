@@ -3,6 +3,7 @@ import 'package:kool_app_ui/HomeScreen.dart';
 import 'package:kool_app_ui/NotificationScreen.dart';
 
 import 'LoginScreen.dart';
+import 'ParametresScreen.dart';
 
 class DrawerScreen extends StatefulWidget {
   @override
@@ -78,7 +79,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ParametreScreen()));
+            },
             title: Text(
               "Parametres",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
