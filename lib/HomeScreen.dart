@@ -657,6 +657,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                       })
                 ],
               ),
+              SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: RaisedButton(
+                  color: Colors.transparent,
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(13.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xffffd400),
+                      borderRadius: BorderRadius.all(Radius.circular(13.0)),
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Page d'acceuil",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),
