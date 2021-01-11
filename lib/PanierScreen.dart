@@ -7,7 +7,7 @@ class PanierScreen extends StatefulWidget {
 }
 
 class _PanierScreenState extends State<PanierScreen> {
-  int _itemCount = 0;
+  int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

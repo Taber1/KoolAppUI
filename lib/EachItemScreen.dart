@@ -7,6 +7,7 @@ class EachItemScreen extends StatefulWidget {
 }
 
 class _EachItemScreenState extends State<EachItemScreen> {
+  int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,21 +71,106 @@ class _EachItemScreenState extends State<EachItemScreen> {
             color: Colors.blue,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 5),
+          child: Column(
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Quantite",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.remove_circle_outline,
+                          size: 30,
+                        ),
+                        onPressed: () => setState(() {
+                          _itemCount == 1 ? null : _itemCount--;
+                        }),
+                      ),
+                      Text(
+                        _itemCount.toString(),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                          icon: Icon(
+                            Icons.add_circle_outline,
+                            size: 30,
+                          ),
+                          onPressed: () => setState(() => _itemCount++))
+                    ],
                   )
                 ],
               ),
-            )
-          ],
+              Row(
+                children: [
+                  RaisedButton(
+                    color: Colors.transparent,
+                    onPressed: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => NumberScreen()));
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xffffd400),
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                      ),
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'Ajouter au Panier',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17),
+                            ),
+                            RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                  text: "10.0",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: "DT",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                              ]),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
