@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
 
-class NumberSuccessful extends StatefulWidget {
+class OrderConfirmationScreen extends StatefulWidget {
   @override
-  _NumberSuccessfulState createState() => _NumberSuccessfulState();
+  _OrderConfirmationScreenState createState() =>
+      _OrderConfirmationScreenState();
 }
 
-class _NumberSuccessfulState extends State<NumberSuccessful> {
+class _OrderConfirmationScreenState extends State<OrderConfirmationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +26,8 @@ class _NumberSuccessfulState extends State<NumberSuccessful> {
                 height: 50,
               ),
               Text(
-                "votre numero a verivie avec succes",
+                "votre commande a ete soumise avec\nSucces",
+                textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey, fontSize: 20),
               )
             ]),
@@ -69,7 +71,7 @@ class _NumberSuccessfulState extends State<NumberSuccessful> {
                   width: MediaQuery.of(context).size.width * 0.9,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Page d'acceuil",
+                    "Mes commandes",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.black,
