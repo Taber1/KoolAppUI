@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:number_inc_dec/number_inc_dec.dart';
+import 'package:kool_app_ui/orderConfirmation.dart';
 
 class PanierScreen extends StatefulWidget {
   @override
@@ -435,7 +435,12 @@ class _PanierScreenState extends State<PanierScreen> {
               ),
               RaisedButton(
                 color: Colors.transparent,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => OrderConfirmationScreen()));
+                },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50.0)),
                 padding: EdgeInsets.all(0.0),
