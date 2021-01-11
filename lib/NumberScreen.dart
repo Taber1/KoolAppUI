@@ -43,12 +43,24 @@ class _NumberScreenState extends State<NumberScreen> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5)),
-                    prefixText: '+216 ',
-                    prefixStyle: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    prefixIcon: Icon(Icons.flag),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.flag),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "+216",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
                     labelStyle: TextStyle(
                         color: Color(0xffffd400), fontWeight: FontWeight.bold),
                   )),
