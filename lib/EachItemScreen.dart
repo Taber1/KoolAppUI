@@ -402,6 +402,12 @@ class _EachItemScreenState extends State<EachItemScreen> {
         height: 120,
         decoration: BoxDecoration(
             color: Colors.white,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 1,
+              ),
+            ],
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20))),
         child: Padding(

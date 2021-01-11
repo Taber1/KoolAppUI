@@ -323,6 +323,171 @@ class _PanierScreenState extends State<PanierScreen> {
                 thickness: 1.1,
                 color: Colors.grey[300],
               ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 175,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 1,
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        child: Padding(
+          padding: EdgeInsets.only(left: 25, right: 20, top: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Total",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "25",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: "Dt",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ]),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Frais de livraison",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "4.0",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: "Dt",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ]),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Tips",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "-",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Remise coupon",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "-",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              RaisedButton(
+                color: Colors.transparent,
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0)),
+                padding: EdgeInsets.all(0.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 5, color: Color(0xffffd400)),
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  ),
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(""),
+                        Text(""),
+                        Text(
+                          'Commander',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                        ),
+                        RichText(
+                          text: TextSpan(children: [
+                            TextSpan(
+                              text: "29.0",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                              text: "DT",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17,
+                              ),
+                            ),
+                          ]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
             ],
           ),
         ),
