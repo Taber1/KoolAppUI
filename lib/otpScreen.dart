@@ -32,9 +32,15 @@ class _OtpScreenState extends State<OtpScreen> {
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5),
-            Text("Entrez le code a 6 chiffres qui a ete envoye"),
+            Text(
+              "Entrez le code a 6 chiffres qui a ete envoye",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             SizedBox(height: 2),
-            Text("+21621345678"),
+            Text(
+              "+21621345678",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             Padding(
               padding: const EdgeInsets.only(
                   left: 100.0, right: 100, bottom: 20, top: 40),
@@ -55,7 +61,8 @@ class _OtpScreenState extends State<OtpScreen> {
               padding: EdgeInsets.all(0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xffffd400),
+                  border: Border.all(width: 5, color: Color(0xffffd400)),
+                  color: Colors.yellow,
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                 ),
                 height: MediaQuery.of(context).size.height * 0.06,
