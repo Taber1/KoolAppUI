@@ -18,12 +18,18 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40)),
+                  // borderRadius: BorderRadius.only(
+                  //     bottomLeft: Radius.circular(40),
+                  //     bottomRight: Radius.circular(40)),
                   color: Color(0xffffd400)),
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.45,
               width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.all(70.0),
+                child: Image.asset(
+                  'assets/images/kool_black.png',
+                ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(top: 120, left: 20, right: 20),
@@ -31,17 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 55,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/logo-kool-Jaune-png.png'))),
-                      )),
                   SizedBox(
-                    height: 50,
+                    height: 200,
                   ),
                   Material(
                     elevation: 10,
@@ -79,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(5)),
-                                    labelText: 'Password',
+                                    labelText: 'Mot de passe',
                                     hintText: "******",
                                     labelStyle: TextStyle(
                                         color: Color(0xffffd400),
@@ -97,19 +94,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                         builder: (context) => NumberScreen()));
                               },
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50.0)),
+                                  borderRadius: BorderRadius.circular(10.0)),
                               padding: EdgeInsets.all(0.0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color(0xffffd400),
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(50.0)),
+                                      BorderRadius.all(Radius.circular(10.0)),
                                 ),
                                 height:
                                     MediaQuery.of(context).size.height * 0.06,
                                 alignment: Alignment.center,
                                 child: const Text(
-                                  'LOGIN',
+                                  "S'identifier",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Colors.black,
@@ -137,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   builder: (context) => HomeScreen()));
                         },
                         child: Text(
-                          "Forget Password?",
+                          "J'ai oublie mon mot de passe?",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.grey[700],
@@ -152,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   builder: (context) => RegisterScreen()));
                         },
                         child: Text(
-                          "Don't have an Account ?",
+                          "Je n'ai pas de compte",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.grey[700],
@@ -172,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               builder: (context) => HomeScreen()));
                     },
                     child: Text(
-                      "Go to HomePage",
+                      "Page d'acceuil",
                       style: TextStyle(
                           color: Color(0xffffd400),
                           fontSize: 18,
@@ -187,6 +184,24 @@ class _LoginScreenState extends State<LoginScreen> {
           clipBehavior: Clip.none,
         ),
       ),
+      // bottomNavigationBar: Container(
+      //   height: 40,
+      //   child: Padding(
+      //     padding: const EdgeInsets.only(left: 10.0, right: 10),
+      //     child: Column(
+      //       children: [
+      //         Row(
+      //           mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //           children: [
+      //             Text("J'ai oublie mon mot de passe?"),
+      //             Text("Je n'ai pas de compte")
+      //           ],
+      //         ),
+      //         Text("Page d'acceuil")
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

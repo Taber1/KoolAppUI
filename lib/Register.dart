@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
+import 'LoginScreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -16,12 +17,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40)),
+                  // borderRadius: BorderRadius.only(
+                  //     bottomLeft: Radius.circular(40),
+                  //     bottomRight: Radius.circular(40)),
                   color: Color(0xffffd400)),
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.45,
               width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.all(70.0),
+                child: Image.asset(
+                  'assets/images/kool_black.png',
+                ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(top: 120, left: 20, right: 20),
@@ -29,17 +36,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 55,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/logo-kool-Jaune-png.png'))),
-                      )),
                   SizedBox(
-                    height: 50,
+                    height: 200,
                   ),
                   Material(
                     elevation: 10,
@@ -64,8 +62,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   borderRadius: BorderRadius.circular(5)),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              labelText: 'Full Name',
-                              hintText: "First Name and Last Name",
+                              labelText: 'Nom complet',
+                              hintText: "Nom et prenom",
                               labelStyle: TextStyle(
                                   color: Color(0xffffd400),
                                   fontWeight: FontWeight.bold),
@@ -81,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5)),
                               labelText: 'Email',
-                              hintText: "Enter Email",
+                              hintText: "adresse email",
                               labelStyle: TextStyle(
                                   color: Color(0xffffd400),
                                   fontWeight: FontWeight.bold),
@@ -93,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(5)),
-                                    labelText: 'Password',
+                                    labelText: 'Mot de passe',
                                     hintText: "******",
                                     labelStyle: TextStyle(
                                         color: Color(0xffffd400),
@@ -111,19 +109,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         builder: (context) => HomeScreen()));
                               },
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50.0)),
+                                  borderRadius: BorderRadius.circular(10.0)),
                               padding: EdgeInsets.all(0.0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Color(0xffffd400),
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(50.0)),
+                                      BorderRadius.all(Radius.circular(10.0)),
                                 ),
                                 height:
                                     MediaQuery.of(context).size.height * 0.06,
                                 alignment: Alignment.center,
                                 child: const Text(
-                                  'REGISTER',
+                                  "S'enregistrer",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Colors.black,
@@ -137,30 +135,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RegisterScreen()));
-                    },
-                    child: Text(
-                      "Already have an Account ?",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Colors.grey[700],
-                          fontStyle: FontStyle.italic),
-                    ),
-                  )
                 ],
               ),
             ),
           ],
           clipBehavior: Clip.none,
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 10.0),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginScreen()));
+          },
+          child: Text(
+            "J'ai un compte? Retour connexion",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.grey,
+                fontStyle: FontStyle.italic),
+          ),
         ),
       ),
     );
