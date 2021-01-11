@@ -370,7 +370,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.white,
                     radius: 25,
                     child: IconButton(
                       icon: Icon(Icons.arrow_back),
@@ -385,7 +385,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                 ),
                 CircleAvatar(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.white,
                   radius: 25,
                   child: Icon(
                     FontAwesomeIcons.shoppingCart,
