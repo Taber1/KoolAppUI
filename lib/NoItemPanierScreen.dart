@@ -64,11 +64,12 @@ class _NoItemPanierScreenState extends State<NoItemPanierScreen> {
                   padding: EdgeInsets.all(0.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color(0xffffd400),
+                      border: Border.all(width: 5, color: Color(0xffffd400)),
+                      color: Colors.yellow,
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     ),
                     height: MediaQuery.of(context).size.height * 0.06,
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    width: MediaQuery.of(context).size.width * 0.55,
                     alignment: Alignment.center,
                     child: const Text(
                       'Commansez a explorer',
