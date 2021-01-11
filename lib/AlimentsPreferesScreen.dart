@@ -133,7 +133,8 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
             padding: EdgeInsets.all(0.0),
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xffffd400),
+                border: Border.all(width: 5, color: Color(0xffffd400)),
+                color: Colors.yellow,
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               height: MediaQuery.of(context).size.height * 0.06,
