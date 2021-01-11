@@ -7,6 +7,7 @@ class EachItemScreen extends StatefulWidget {
 }
 
 class _EachItemScreenState extends State<EachItemScreen> {
+  bool supplement = false;
   int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   padding:
                       const EdgeInsets.only(left: 15.0, top: 15, right: 15),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,6 +72,155 @@ class _EachItemScreenState extends State<EachItemScreen> {
                                 decoration: TextDecoration.lineThrough),
                           )
                         ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50.0)),
+                            ),
+                            height: 30,
+                            width: 100,
+                            alignment: Alignment.center,
+                            child: RaisedButton(
+                              color: Colors.green,
+                              onPressed: () {},
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0)),
+                              child: const Text(
+                                'Livrable',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50.0)),
+                            ),
+                            height: 30,
+                            width: 80,
+                            alignment: Alignment.center,
+                            child: RaisedButton(
+                              color: Colors.grey,
+                              onPressed: () {},
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0)),
+                              child: const Text(
+                                'paire',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                          child: Text(
+                        "Une boule de riz vinaigre sur laquelle on pose delicatement une fine tranche da saumon",
+                        softWrap: true,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w500),
+                      )),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text("Extras",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Selectionnez des extras pour les ajouter a la nourriture",
+                        style: TextStyle(
+                            color: Colors.grey, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text("supplement",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: 25, bottom: 25, left: 20, right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Saumon + 10.0DT",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  supplement = !supplement;
+                                });
+                              },
+                              child: supplement
+                                  ? Icon(
+                                      Icons.radio_button_checked,
+                                      color: Color(0xffffd400),
+                                      size: 20,
+                                    )
+                                  : Icon(
+                                      Icons.radio_button_unchecked,
+                                      color: Colors.grey[700],
+                                      size: 21.5,
+                                    ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text("Ingredients",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text("Saumon, riz vinaigre",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                          )),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text("Nutrition",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SizedBox(
+                        height: 25,
                       ),
                     ],
                   ),
@@ -174,12 +325,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   ),
                   RaisedButton(
                     color: Colors.transparent,
-                    onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => NumberScreen()));
-                    },
+                    onPressed: () {},
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0)),
                     padding: EdgeInsets.all(0.0),
