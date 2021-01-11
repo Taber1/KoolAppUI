@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:number_inc_dec/number_inc_dec.dart';
 
 class PanierScreen extends StatefulWidget {
@@ -7,6 +8,10 @@ class PanierScreen extends StatefulWidget {
 }
 
 class _PanierScreenState extends State<PanierScreen> {
+  bool espece = false;
+  bool cheque = false;
+  bool ticketResto = false;
+  bool paiement = false;
   int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
@@ -41,9 +46,8 @@ class _PanierScreenState extends State<PanierScreen> {
               ),
               Container(
                 height: 130,
-                width: MediaQuery.of(context).size.width * 0.95,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
+                    border: Border.all(color: Colors.grey[300]),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Row(
@@ -124,10 +128,201 @@ class _PanierScreenState extends State<PanierScreen> {
                             ),
                             onPressed: () => setState(() => _itemCount++))
                       ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 40),
+              TextField(
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey[350]),
+                          borderRadius: BorderRadius.circular(40)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40)),
+                      hintText: " code promo ?",
+                      hintStyle: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                      suffixIcon: Icon(FontAwesomeIcons.fileAlt))),
+              SizedBox(height: 20),
+              Divider(
+                thickness: 1.1,
+                color: Colors.grey[300],
+              ),
+              SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Espece",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          espece = !espece;
+                        });
+                      },
+                      child: espece
+                          ? Icon(
+                              Icons.radio_button_checked,
+                              color: Color(0xffffd400),
+                              size: 20,
+                            )
+                          : Icon(
+                              Icons.radio_button_unchecked,
+                              color: Colors.grey[700],
+                              size: 21.5,
+                            ),
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Cheque",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          cheque = !cheque;
+                        });
+                      },
+                      child: cheque
+                          ? Icon(
+                              Icons.radio_button_checked,
+                              color: Color(0xffffd400),
+                              size: 20,
+                            )
+                          : Icon(
+                              Icons.radio_button_unchecked,
+                              color: Colors.grey[700],
+                              size: 21.5,
+                            ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Ticket Resto",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          ticketResto = !ticketResto;
+                        });
+                      },
+                      child: ticketResto
+                          ? Icon(
+                              Icons.radio_button_checked,
+                              color: Color(0xffffd400),
+                              size: 20,
+                            )
+                          : Icon(
+                              Icons.radio_button_unchecked,
+                              color: Colors.grey[700],
+                              size: 21.5,
+                            ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Paiement en ligne",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          paiement = !paiement;
+                        });
+                      },
+                      child: paiement
+                          ? Icon(
+                              Icons.radio_button_checked,
+                              color: Color(0xffffd400),
+                              size: 20,
+                            )
+                          : Icon(
+                              Icons.radio_button_unchecked,
+                              color: Colors.grey[700],
+                              size: 21.5,
+                            ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1.1,
+                color: Colors.grey[300],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Pourboire pour le livreur",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.remove_circle_outline,
+                            size: 30,
+                          ),
+                          onPressed: () => setState(() {
+                            _itemCount == 1 ? null : _itemCount--;
+                          }),
+                        ),
+                        Text(
+                          _itemCount.toString(),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        IconButton(
+                            icon: Icon(
+                              Icons.add_circle_outline,
+                              size: 30,
+                            ),
+                            onPressed: () => setState(() => _itemCount++))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1.1,
+                color: Colors.grey[300],
+              ),
             ],
           ),
         ),
