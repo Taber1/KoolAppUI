@@ -111,7 +111,21 @@ class _EachItemScreenState extends State<EachItemScreen> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(28),
+                      color: Colors.red,
+                    ),
+                    height: 60,
+                    width: 70,
+                    child: Center(
+                        child: Container(
+                      height: 20,
+                      width: 20,
+                    )),
+                  ),
                   RaisedButton(
                     color: Colors.transparent,
                     onPressed: () {
@@ -129,12 +143,12 @@ class _EachItemScreenState extends State<EachItemScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                       ),
                       height: MediaQuery.of(context).size.height * 0.06,
-                      width: MediaQuery.of(context).size.width * 0.6,
+                      width: MediaQuery.of(context).size.width * 0.75,
                       alignment: Alignment.center,
                       child: Padding(
-                        padding: const EdgeInsets.all(5.0),
+                        padding: EdgeInsets.all(5.0),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
                               'Ajouter au Panier',
