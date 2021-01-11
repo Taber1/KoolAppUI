@@ -264,13 +264,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.3"
-  pin_code_fields:
-    dependency: "direct main"
+  pin_input_text_field:
+    dependency: transitive
     description:
-      name: pin_code_fields
+      name: pin_input_text_field
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.2"
+    version: "3.3.0"
   platform:
     dependency: transitive
     description:
@@ -304,6 +304,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sms_autofill:
+    dependency: "direct main"
+    description:
+      name: sms_autofill
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.7"
   source_map_stack_trace:
     dependency: transitive
     description:
@@ -432,4 +439,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.12.0-0.0 <3.0.0"
-  flutter: ">=1.22.0 <2.0.0"
+  flutter: ">=1.10.0 <3.0.0"

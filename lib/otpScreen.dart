@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kool_app_ui/NumberConfirmation.dart';
+import 'package:sms_autofill/sms_autofill.dart';
 
 import 'HomeScreen.dart';
 
@@ -28,7 +29,18 @@ class _OtpScreenState extends State<OtpScreen> {
           children: [
             Text(
               "Code?",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 5),
+            Text("Entrez le code a 6 chiffres qui a ete envoye"),
+            SizedBox(height: 2),
+            Text("+21621345678"),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 100.0, right: 100, bottom: 20, top: 40),
+              child: PinFieldAutoFill(
+                codeLength: 6,
+              ),
             ),
             RaisedButton(
               color: Colors.transparent,
