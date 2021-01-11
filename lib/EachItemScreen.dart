@@ -64,6 +64,29 @@ class _EachItemScreenState extends State<EachItemScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: Container(
+        height: 120,
+        decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Quantite",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
