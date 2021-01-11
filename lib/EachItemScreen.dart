@@ -222,6 +222,142 @@ class _EachItemScreenState extends State<EachItemScreen> {
                       SizedBox(
                         height: 25,
                       ),
+                      Row(
+                        children: [
+                          Material(
+                            elevation: 5,
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.lightGreenAccent,
+                              ),
+                              height: 70,
+                              width: 75,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    "Glucides",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "19.9",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Material(
+                            elevation: 5,
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.lightGreenAccent,
+                              ),
+                              height: 70,
+                              width: 75,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    "Proteines",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "40.0",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Material(
+                            elevation: 5,
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.lightGreenAccent,
+                              ),
+                              height: 70,
+                              width: 75,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    "calories",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "10.4",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Material(
+                            elevation: 5,
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.lightGreenAccent,
+                              ),
+                              height: 70,
+                              width: 75,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    "Liqides",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "0.002",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
                     ],
                   ),
                 )
@@ -265,7 +401,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
       bottomNavigationBar: Container(
         height: 120,
         decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Colors.white,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20))),
         child: Padding(
@@ -311,18 +447,17 @@ class _EachItemScreenState extends State<EachItemScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(28),
-                      color: Colors.red,
-                    ),
-                    height: 60,
-                    width: 70,
-                    child: Center(
-                        child: Container(
-                      height: 20,
-                      width: 20,
-                    )),
-                  ),
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 2, color: Color(0xffffd400)),
+                        borderRadius: BorderRadius.circular(28),
+                        color: Colors.white,
+                      ),
+                      height: 60,
+                      width: 70,
+                      child: Icon(
+                        Icons.favorite,
+                        color: Color(0xffffd400),
+                      )),
                   RaisedButton(
                     color: Colors.transparent,
                     onPressed: () {},
@@ -331,7 +466,8 @@ class _EachItemScreenState extends State<EachItemScreen> {
                     padding: EdgeInsets.all(0.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Color(0xffffd400),
+                        border: Border.all(width: 5, color: Color(0xffffd400)),
+                        color: Colors.yellow,
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                       ),
                       height: MediaQuery.of(context).size.height * 0.06,
