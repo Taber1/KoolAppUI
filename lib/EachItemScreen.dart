@@ -24,11 +24,55 @@ class _EachItemScreenState extends State<EachItemScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [Text("Nigiri Saumon")],
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 15.0, top: 15, right: 15),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Nigiri Saumon",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: "5.6",
+                                style: TextStyle(
+                                    color: Color(0xffffd400),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: "Dt",
+                                style: TextStyle(
+                                  color: Color(0xffffd400),
+                                  fontSize: 22,
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Benkay Sushi",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            "7.5DT",
+                            style: TextStyle(
+                                decoration: TextDecoration.lineThrough),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
