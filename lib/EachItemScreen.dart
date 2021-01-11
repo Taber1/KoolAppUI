@@ -39,14 +39,16 @@ class _EachItemScreenState extends State<EachItemScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
-                  backgroundColor: Colors.red,
-                  radius: 25,
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                    color: Color(0xffffd400),
-                  ),
-                ),
+                    backgroundColor: Colors.red,
+                    radius: 25,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      iconSize: 30,
+                      color: Color(0xffffd400),
+                    )),
                 Text(
                   "Nigiri Sauman",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),

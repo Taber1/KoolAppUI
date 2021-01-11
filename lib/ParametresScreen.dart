@@ -28,6 +28,24 @@ class _ParametreScreenState extends State<ParametreScreen> {
           style: TextStyle(color: Color(0xffffd400)),
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 10.0, right: 10, top: 20),
+        child: Column(
+          children: [
+            TextField(
+                decoration: InputDecoration(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              hintText: 'Rechercher des restaurants ou des aliments',
+              hintStyle: TextStyle(color: Colors.grey),
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
+            )),
+          ],
+        ),
+      ),
     );
   }
 }
