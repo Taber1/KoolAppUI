@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 15,
               ),
               Container(
-                child: ListView.builder(
+                child: ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: item.length,
@@ -286,6 +286,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     return EachItemCard(
                       prodName: item[index]['name'],
                       prodPicture: item[index]['picture'],
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
+                      height: 5,
                     );
                   },
                 ),
@@ -317,8 +322,8 @@ class EachItemCard extends StatelessWidget {
                       )));
         },
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.38,
-          width: MediaQuery.of(context).size.width * 0.9,
+          // height: MediaQuery.of(context).size.height * 0.38,
+          // width: MediaQuery.of(context).size.width * 0.9,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,

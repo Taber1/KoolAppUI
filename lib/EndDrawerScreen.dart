@@ -66,18 +66,20 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 20,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.hamburger),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Livraison",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 130,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.hamburger),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Livraison",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                       Radio(
                           value: FilterOne.Livraison,
@@ -93,18 +95,20 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 10,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.hamburger),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "A emporter",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 113,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.hamburger),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "A emporter",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
                       Radio(
                           value: FilterOne.Emporter,
@@ -130,32 +134,33 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 20,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Ouvert",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
-                        width: 197,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            ouvertOpt = !ouvertOpt;
-                          });
-                        },
-                        child: ouvertOpt
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              ouvertOpt = !ouvertOpt;
+                            });
+                          },
+                          child: ouvertOpt
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -173,32 +178,33 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 20,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Tout",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
-                        width: 215,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            toutOpt = !toutOpt;
-                          });
-                        },
-                        child: toutOpt
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              toutOpt = !toutOpt;
+                            });
+                          },
+                          child: toutOpt
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -206,36 +212,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.bacon),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.bacon),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Sushis",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Sushis",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 162,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            sushis = !sushis;
-                          });
-                        },
-                        child: sushis
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              sushis = !sushis;
+                            });
+                          },
+                          child: sushis
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -243,36 +254,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.pizzaSlice),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.pizzaSlice),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Pizzas",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Pizzas",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 162,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            pizzas = !pizzas;
-                          });
-                        },
-                        child: pizzas
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              pizzas = !pizzas;
+                            });
+                          },
+                          child: pizzas
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -280,36 +296,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.cheese),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.cheese),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Sandwichs",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Sandwichs",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 130,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            sandwichs = !sandwichs;
-                          });
-                        },
-                        child: sandwichs
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              sandwichs = !sandwichs;
+                            });
+                          },
+                          child: sandwichs
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -317,36 +338,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.hamburger),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.hamburger),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Burgers",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Burgers",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 153,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            burgers = !burgers;
-                          });
-                        },
-                        child: burgers
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              burgers = !burgers;
+                            });
+                          },
+                          child: burgers
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -354,36 +380,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(FontAwesomeIcons.hotdog),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(FontAwesomeIcons.hotdog),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Tacos",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Tacos",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 168,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            tacos = !tacos;
-                          });
-                        },
-                        child: tacos
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              tacos = !tacos;
+                            });
+                          },
+                          child: tacos
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -391,36 +422,41 @@ class _FilterDrawerState extends State<FilterDrawer> {
                     height: 25,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.fastfood),
-                      SizedBox(
-                        width: 10,
+                      Row(
+                        children: [
+                          Icon(Icons.fastfood),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Pates",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Pates",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 170,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            pates = !pates;
-                          });
-                        },
-                        child: pates
-                            ? Icon(
-                                Icons.radio_button_checked,
-                                color: Color(0xffffd400),
-                                size: 20,
-                              )
-                            : Icon(
-                                Icons.radio_button_unchecked,
-                                color: Colors.grey[700],
-                                size: 21.5,
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              pates = !pates;
+                            });
+                          },
+                          child: pates
+                              ? Icon(
+                                  Icons.radio_button_checked,
+                                  color: Color(0xffffd400),
+                                  size: 21.5,
+                                )
+                              : Icon(
+                                  Icons.radio_button_unchecked,
+                                  color: Colors.grey[700],
+                                  size: 21.5,
+                                ),
+                        ),
                       )
                     ],
                   ),
