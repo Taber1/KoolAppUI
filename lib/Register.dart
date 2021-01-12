@@ -34,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 17,
                     color: Colors.grey,
                   ),
                 ),
@@ -47,22 +47,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 decoration: BoxDecoration(color: Color(0xffffd400)),
                 height: MediaQuery.of(context).size.height * 0.47,
                 width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 60.0, right: 60, top: 40),
-                  child: Image.asset(
-                    'assets/images/kool_black.png',
-                  ),
-                ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 120, left: 20, right: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 60.0, right: 60),
+                      child: Image.asset(
+                        'assets/images/kool_black.png',
+                      ),
+                    ),
                     SizedBox(
-                      height: 100,
+                      height: 50,
                     ),
                     Material(
                       elevation: 10,
@@ -75,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         width: MediaQuery.of(context).size.width * 0.9,
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 20.0, right: 20.0, top: 40.0, bottom: 40.0),
+                              left: 20.0, right: 20.0, top: 20.0, bottom: 20.0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,

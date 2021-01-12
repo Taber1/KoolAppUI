@@ -16,9 +16,15 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset(
-              'assets/images/circle.png',
-              alignment: Alignment.bottomRight,
+            child: Container(
+              height: 100,
+              width: 100,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    alignment: Alignment.bottomRight,
+                    image: AssetImage('assets/images/circle.png')),
+              ),
             ),
           ),
           Stack(
@@ -27,22 +33,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(color: Color(0xffffd400)),
                 height: MediaQuery.of(context).size.height * 0.47,
                 width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 60.0, right: 60, top: 40),
-                  child: Image.asset(
-                    'assets/images/kool_black.png',
-                  ),
-                ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 120, left: 20, right: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 60.0, right: 60, top: 70),
+                      child: Image.asset(
+                        'assets/images/kool_black.png',
+                      ),
+                    ),
                     SizedBox(
-                      height: 100,
+                      height: 50,
                     ),
                     Material(
                       elevation: 10,
@@ -129,38 +135,40 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 25,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        InkWell(
-                          onTap: () {},
-                          child: Text(
-                            "J'ai oublie mon mot de passe?",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[700],
-                            ),
-                          ),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        "J'ai oublie mon mot de passe?",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 17,
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => RegisterScreen()));
-                          },
-                          child: Text(
-                            "Je n'ai pas de compte",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[700],
-                            ),
-                          ),
-                        )
-                      ],
+                        softWrap: true,
+                      ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterScreen()));
+                      },
+                      child: Text(
+                        "Je n'ai pas de compte",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                          color: Colors.grey,
+                        ),
+                        softWrap: true,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     InkWell(
                       onTap: () {
