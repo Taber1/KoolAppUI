@@ -24,7 +24,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   height: MediaQuery.of(context).size.height * 0.37,
                   width: MediaQuery.of(context).size.width,
                   child: Image.network(
-                    'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg',
+                    widget.prod_picture,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -38,7 +38,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Nigiri Saumon",
+                            "${widget.prod_name}",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
