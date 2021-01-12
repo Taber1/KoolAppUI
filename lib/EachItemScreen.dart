@@ -385,7 +385,10 @@ class _EachItemScreenState extends State<EachItemScreen> {
                     )),
                 Text(
                   "Nigiri Sauman",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700),
                 ),
                 CircleAvatar(
                   backgroundColor: Colors.white,
@@ -469,7 +472,9 @@ class _EachItemScreenState extends State<EachItemScreen> {
                       )),
                   RaisedButton(
                     color: Colors.transparent,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0)),
                     padding: EdgeInsets.all(0.0),

@@ -244,8 +244,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: item.length,
                   itemBuilder: (BuildContext context, int index) {
                     return EachItemCard(
-                      prod_name: item[index]['name'],
-                      prod_picture: item[index]['picture'],
+                      prodName: item[index]['name'],
+                      prodPicture: item[index]['picture'],
                     );
                   },
                   separatorBuilder: (context, index) {
@@ -264,9 +264,9 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class EachItemCard extends StatelessWidget {
-  final prod_name;
-  final prod_picture;
-  EachItemCard({this.prod_name, this.prod_picture});
+  final prodName;
+  final prodPicture;
+  EachItemCard({this.prodName, this.prodPicture});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -275,8 +275,8 @@ class EachItemCard extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => EachItemScreen(
-                      prod_name: prod_name,
-                      prod_picture: prod_picture,
+                      prodName: prodName,
+                      prodPicture: prodPicture,
                     )));
       },
       child: Container(
@@ -296,12 +296,12 @@ class EachItemCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: NetworkImage(prod_picture))),
+                      fit: BoxFit.cover, image: NetworkImage(prodPicture))),
             ),
             SizedBox(
               height: 10,
             ),
-            Text('$prod_name',
+            Text('$prodName',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
