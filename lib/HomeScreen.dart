@@ -182,22 +182,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
+                    itemCount: item.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(color: Color(0xffffd400)),
-                          child: Center(
-                            child: Text(
-                              "$index",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
+                            height: 100,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                  Colors.yellow,
+                                  Colors.yellow[900]
+                                ])),
+                            child: Column(
+                              children: [
+                                Image.network('src'),
+                                Text(
+                                  "${item[index]['name']}",
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            )),
                       );
                     }),
               ),
@@ -210,19 +221,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   duration: 1,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return new Container(
+                    return Container(
                       decoration: BoxDecoration(
                           color: Color(0xffffd400),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(item[index]['picture'])),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                          child: Text(
-                        "$index",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )),
                     );
                   },
-                  itemCount: 10,
+                  itemCount: item.length,
                   viewportFraction: 0.8,
                   scale: 0.9,
                 ),
@@ -290,13 +298,41 @@ class EachItemCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      fit: BoxFit.cover, image: NetworkImage(prodPicture))),
+            Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                Container(
+                  height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          fit: BoxFit.cover, image: NetworkImage(prodPicture))),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 50,
+                    width: 120,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "15 - 25",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        Text(
+                          "min",
+                          style: TextStyle(fontSize: 16),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 10,

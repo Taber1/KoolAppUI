@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class EachItemScreen extends StatefulWidget {
-  String prod_name;
-  String prod_picture;
-  EachItemScreen({this.prod_name, this.prod_picture});
+  String prodName;
+  String prodPicture;
+  EachItemScreen({this.prodName, this.prodPicture});
   @override
   _EachItemScreenState createState() => _EachItemScreenState();
 }
@@ -24,7 +24,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   height: MediaQuery.of(context).size.height * 0.37,
                   width: MediaQuery.of(context).size.width,
                   child: Image.network(
-                    widget.prod_picture,
+                    widget.prodPicture,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -38,7 +38,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "${widget.prod_name}",
+                            "${widget.prodName}",
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),

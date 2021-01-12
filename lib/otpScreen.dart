@@ -18,9 +18,9 @@ class _OtpScreenState extends State<OtpScreen> {
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xffffd400),
         title: Image.asset(
-          'assets/images/logo-kool-Jaune-png.png',
+          'assets/images/kool_black.png',
           color: Colors.black,
-          height: 65,
+          height: 40,
         ),
       ),
       body: Center(
