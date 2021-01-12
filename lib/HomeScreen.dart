@@ -18,59 +18,62 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DrawerScreen()));
-          },
-          icon: Icon(FontAwesomeIcons.userAlt),
-          color: Color(0xffffd400),
-        ),
-        title: Image.asset(
-          'assets/images/logo-kool-Jaune-png.png',
-          color: Color(0xffffd400),
-          height: 65,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Stack(
-              alignment: Alignment.bottomRight,
-              children: [
-                IconButton(
-                  icon: Icon(FontAwesomeIcons.shoppingCart),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NoItemPanierScreen()));
-                  },
-                  iconSize: 28,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NoItemPanierScreen()));
-                  },
-                  child: CircleAvatar(
-                    radius: 7,
-                    backgroundColor: Color(0xffffd400),
-                    child: Text(
-                      "0",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                )
-              ],
-            ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: AppBar(
+          elevation: 0,
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DrawerScreen()));
+            },
+            icon: Icon(FontAwesomeIcons.userAlt),
+            color: Color(0xffffd400),
           ),
-        ],
+          title: Image.asset(
+            'assets/images/logo-kool-Jaune-png.png',
+            color: Color(0xffffd400),
+            height: 65,
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.shoppingCart),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NoItemPanierScreen()));
+                    },
+                    iconSize: 28,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NoItemPanierScreen()));
+                    },
+                    child: CircleAvatar(
+                      radius: 10,
+                      backgroundColor: Color(0xffffd400),
+                      child: Text(
+                        "0",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       endDrawer: FilterDrawer(),
       drawer: DrawerScreen(),
@@ -190,24 +193,29 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 100,
                             width: 100,
                             decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image:
+                                        NetworkImage(item[index]['picture'])),
                                 gradient: LinearGradient(
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
-                                  Colors.yellow,
-                                  Colors.yellow[900]
-                                ])),
-                            child: Column(
-                              children: [
-                                Image.network('src'),
-                                Text(
+                                      Colors.yellow,
+                                      Colors.yellow[900]
+                                    ])),
+                            child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 5.0),
+                                child: Text(
                                   "${item[index]['name']}",
                                   style: TextStyle(
                                       fontSize: 17,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
-                                )
-                              ],
+                                ),
+                              ),
                             )),
                       );
                     }),
@@ -221,13 +229,37 @@ class _HomeScreenState extends State<HomeScreen> {
                   duration: 1,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xffffd400),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(item[index]['picture'])),
-                          borderRadius: BorderRadius.circular(10)),
+                    return Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              image: DecorationImage(
+                                  colorFilter: new ColorFilter.mode(
+                                      Colors.black.withOpacity(0.2),
+                                      BlendMode.dstATop),
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(item[index]['picture'])),
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        Container(
+                          height: 50,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Center(
+                            child: Text(
+                              "Les promos Benkay",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                      ],
                     );
                   },
                   itemCount: item.length,
