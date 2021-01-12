@@ -65,6 +65,7 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           height: 75,
@@ -76,9 +77,6 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
                                   image: NetworkImage(
                                       "https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg"))),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -87,8 +85,9 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
                             ),
                             Text(
                               "Hosomaki Saumon",
+                              softWrap: true,
                               style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 5,
@@ -99,18 +98,20 @@ class _AlimentsPreferesScreenState extends State<AlimentsPreferesScreen> {
                             )
                           ],
                         ),
-                        SizedBox(
-                          width: 40,
+                        RichText(
+                          text: TextSpan(children: [
+                            TextSpan(
+                              text: "9.4",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                                text: "Dt",
+                                style: TextStyle(color: Colors.black)),
+                          ]),
                         ),
-                        Text(
-                          "9.4",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Dt",
-                          style: TextStyle(),
-                        )
                       ],
                     ),
                   ),

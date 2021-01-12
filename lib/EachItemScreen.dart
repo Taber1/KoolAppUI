@@ -187,7 +187,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                                   ? Icon(
                                       Icons.radio_button_checked,
                                       color: Color(0xffffd400),
-                                      size: 20,
+                                      size: 21.5,
                                     )
                                   : Icon(
                                       Icons.radio_button_unchecked,
@@ -461,11 +461,11 @@ class _EachItemScreenState extends State<EachItemScreen> {
                   Container(
                       decoration: BoxDecoration(
                         border: Border.all(width: 2, color: Color(0xffffd400)),
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(22),
                         color: Colors.white,
                       ),
-                      height: 60,
-                      width: 70,
+                      height: 55,
+                      width: 60,
                       child: Icon(
                         Icons.favorite,
                         color: Color(0xffffd400),

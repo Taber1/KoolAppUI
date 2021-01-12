@@ -53,7 +53,7 @@ class _ParametreScreenState extends State<ParametreScreen> {
                   ),
                 )),
                 SizedBox(
-                  height: 100,
+                  height: 80,
                 ),
                 Material(
                   elevation: 7,
