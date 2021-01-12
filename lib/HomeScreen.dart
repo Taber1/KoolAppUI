@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: _key,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
+        preferredSize: Size.fromHeight(70),
         child: AppBar(
           elevation: 0,
           centerTitle: true,
@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 15,
               ),
               Container(
-                child: ListView.separated(
+                child: ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: item.length,
@@ -286,11 +286,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     return EachItemCard(
                       prodName: item[index]['name'],
                       prodPicture: item[index]['picture'],
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(
-                      height: 10,
                     );
                   },
                 ),
@@ -309,112 +304,116 @@ class EachItemCard extends StatelessWidget {
   EachItemCard({this.prodName, this.prodPicture});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => EachItemScreen(
-                      prodName: prodName,
-                      prodPicture: prodPicture,
-                    )));
-      },
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.38,
-        width: MediaQuery.of(context).size.width * 0.9,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              alignment: Alignment.bottomRight,
-              children: [
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          fit: BoxFit.cover, image: NetworkImage(prodPicture))),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 50,
-                    width: 120,
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => EachItemScreen(
+                        prodName: prodName,
+                        prodPicture: prodPicture,
+                      )));
+        },
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.38,
+          width: MediaQuery.of(context).size.width * 0.9,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "15 - 25",
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          "min",
-                          style: TextStyle(fontSize: 16),
-                        )
-                      ],
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(prodPicture))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 50,
+                      width: 120,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "15 - 25",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Text(
+                            "min",
+                            style: TextStyle(fontSize: 16),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text('$prodName',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500)),
-            Flexible(
-                child: Text(
-              " Retrouvez toutes vos envies dans nos sushis. BENKAY est une chaine de r",
-              softWrap: true,
-              style: TextStyle(color: Colors.grey),
-            )),
-            SizedBox(
-              height: 2,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.star_outline,
-                  color: Color(0xffffd400),
-                ),
-                Icon(
-                  Icons.star_outline,
-                  color: Color(0xffffd400),
-                ),
-                Icon(
-                  Icons.star_outline,
-                  color: Color(0xffffd400),
-                ),
-                Icon(
-                  Icons.star_outline,
-                  color: Color(0xffffd400),
-                ),
-                Icon(
-                  Icons.star_outline,
-                  color: Color(0xffffd400),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Text(
-              " 1.00 Km",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            )
-          ],
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text('$prodName',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500)),
+              Flexible(
+                  child: Text(
+                " Retrouvez toutes vos envies dans nos sushis. BENKAY est une chaine de r",
+                softWrap: true,
+                style: TextStyle(color: Colors.grey),
+              )),
+              SizedBox(
+                height: 2,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star_outline,
+                    color: Color(0xffffd400),
+                  ),
+                  Icon(
+                    Icons.star_outline,
+                    color: Color(0xffffd400),
+                  ),
+                  Icon(
+                    Icons.star_outline,
+                    color: Color(0xffffd400),
+                  ),
+                  Icon(
+                    Icons.star_outline,
+                    color: Color(0xffffd400),
+                  ),
+                  Icon(
+                    Icons.star_outline,
+                    color: Color(0xffffd400),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 2,
+              ),
+              Text(
+                " 1.00 Km",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              )
+            ],
+          ),
         ),
       ),
     );
