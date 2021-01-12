@@ -52,9 +52,10 @@ class _PanierScreenState extends State<PanierScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: 10,
+                      width: 0,
                     ),
                     Container(
                       height: 100,
@@ -65,9 +66,6 @@ class _PanierScreenState extends State<PanierScreen> {
                               image: NetworkImage(
                                   'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg')),
                           borderRadius: BorderRadius.circular(20)),
-                    ),
-                    SizedBox(
-                      width: 10,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
