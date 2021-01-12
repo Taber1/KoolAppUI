@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding:
-                      const EdgeInsets.only(left: 60.0, right: 60, top: 60),
+                      const EdgeInsets.only(left: 60.0, right: 60, top: 40),
                   child: Image.asset(
                     'assets/images/kool_black.png',
                   ),
