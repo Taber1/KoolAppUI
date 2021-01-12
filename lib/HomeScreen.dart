@@ -272,7 +272,12 @@ class EachItemCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => EachItemScreen()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => EachItemScreen(
+                      prod_name: prod_name,
+                      prod_picture: prod_picture,
+                    )));
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.38,
