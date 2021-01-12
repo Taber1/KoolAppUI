@@ -5,6 +5,7 @@ import 'package:kool_app_ui/DrawerScreen.dart';
 import 'package:kool_app_ui/EachItemScreen.dart';
 import 'EndDrawerScreen.dart';
 import 'NoItemPanierScreen.dart';
+import 'itemList.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -240,9 +241,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 10,
+                  itemCount: item.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return EachItemCard();
+                    return EachItemCard(
+                      prod_name: item[index]['name'],
+                      prod_picture: item[index]['picture'],
+                    );
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
@@ -260,6 +264,9 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class EachItemCard extends StatelessWidget {
+  final prod_name;
+  final prod_picture;
+  EachItemCard({this.prod_name, this.prod_picture});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -272,7 +279,7 @@ class EachItemCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.9,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xffffd400),
+          color: Colors.white,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -284,14 +291,12 @@ class EachItemCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_1280.jpg'))),
+                      fit: BoxFit.cover, image: NetworkImage(prod_picture))),
             ),
             SizedBox(
               height: 10,
             ),
-            Text(' Benkay Sushi',
+            Text('$prod_name',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
@@ -309,23 +314,23 @@ class EachItemCard extends StatelessWidget {
               children: [
                 Icon(
                   Icons.star_outline,
-                  color: Colors.black,
+                  color: Color(0xffffd400),
                 ),
                 Icon(
                   Icons.star_outline,
-                  color: Colors.black,
+                  color: Color(0xffffd400),
                 ),
                 Icon(
                   Icons.star_outline,
-                  color: Colors.black,
+                  color: Color(0xffffd400),
                 ),
                 Icon(
                   Icons.star_outline,
-                  color: Colors.black,
+                  color: Color(0xffffd400),
                 ),
                 Icon(
                   Icons.star_outline,
-                  color: Colors.black,
+                  color: Color(0xffffd400),
                 ),
               ],
             ),

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class EachItemScreen extends StatefulWidget {
+  String prod_name;
+  String prod_picture;
+  EachItemScreen({this.prod_name, this.prod_picture});
   @override
   _EachItemScreenState createState() => _EachItemScreenState();
 }
