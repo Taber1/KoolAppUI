@@ -33,7 +33,6 @@ dependencies:
   flutter_swiper: ^1.1.6
   sms_autofill: ^1.2.7
   number_inc_dec: ^0.6.6
-  floating_action_bubble: 1.0.9
 
 dev_dependencies:
   flutter_test:
