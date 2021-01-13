@@ -11,6 +11,7 @@ class EachItemScreen extends StatefulWidget {
 
 class _EachItemScreenState extends State<EachItemScreen> {
   bool supplement = false;
+  bool pressed = false;
   int _itemCount = 1;
   @override
   Widget build(BuildContext context) {
@@ -458,18 +459,36 @@ class _EachItemScreenState extends State<EachItemScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 2, color: Color(0xffffd400)),
-                        borderRadius: BorderRadius.circular(22),
-                        color: Colors.white,
-                      ),
-                      height: 55,
-                      width: 60,
-                      child: Icon(
-                        Icons.favorite,
-                        color: Color(0xffffd400),
-                      )),
+                  InkWell(
+                      onTap: () {
+                        setState(() {
+                          pressed = !pressed;
+                        });
+                      },
+                      child: pressed
+                          ? Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 2, color: Colors.white),
+                                borderRadius: BorderRadius.circular(22),
+                                color: Color(0xffffd400),
+                              ),
+                              height: 55,
+                              width: 60,
+                              child: Icon(Icons.favorite, color: Colors.white))
+                          : Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    width: 2, color: Color(0xffffd400)),
+                                borderRadius: BorderRadius.circular(22),
+                                color: Colors.white,
+                              ),
+                              height: 55,
+                              width: 60,
+                              child: Icon(
+                                Icons.favorite,
+                                color: Color(0xffffd400),
+                              ))),
                   RaisedButton(
                     color: Colors.transparent,
                     onPressed: () {
