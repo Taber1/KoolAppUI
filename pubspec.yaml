@@ -36,6 +36,7 @@ dependencies:
   pimp_my_button: ^1.0.0
   simple_animations: ^2.4.2
   like_button: ^1.0.4
+  lottie: ^0.7.0+1
 
 dev_dependencies:
   flutter_test:

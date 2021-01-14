@@ -474,19 +474,23 @@ class _EachItemScreenState extends State<EachItemScreen>
                         });
                       },
                       child: pressed
-                          ? Container(
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 2, color: Colors.white),
-                                borderRadius: BorderRadius.circular(22),
-                                color: Color(0xffffd400),
-                              ),
-                              height: 55,
-                              width: 60,
-                              child: Icon(
-                                Icons.favorite,
-                                color: Colors.white,
-                              ))
+                          ?
+                          // Container(
+                          //     decoration: BoxDecoration(
+                          //       border:
+                          //           Border.all(width: 2, color: Colors.white),
+                          //       borderRadius: BorderRadius.circular(22),
+                          //       color: Color(0xffffd400),
+                          //     ),
+                          //     height: 55,
+                          //     width: 60,
+                          //     child:
+                          Image.asset("assets/images/gif.gif")
+                          // Icon(
+                          //   Icons.favorite,
+                          //   color: Colors.white,
+                          // )
+                          // )
                           : Container(
                               decoration: BoxDecoration(
                                 border: Border.all(
