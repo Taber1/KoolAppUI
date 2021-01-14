@@ -1,5 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:like_button/like_button.dart';
+import 'package:pimp_my_button/pimp_my_button.dart';
+
+import 'a.dart';
 
 class EachItemScreen extends StatefulWidget {
   String prodName;
@@ -13,6 +19,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
   bool supplement = false;
   bool pressed = false;
   int _itemCount = 1;
+  Random random = Random();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -463,6 +470,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                       onTap: () {
                         setState(() {
                           pressed = !pressed;
+                          ParticleModel(random);
                         });
                       },
                       child: pressed
@@ -475,7 +483,7 @@ class _EachItemScreenState extends State<EachItemScreen> {
                               ),
                               height: 55,
                               width: 60,
-                              child: Icon(Icons.favorite, color: Colors.white))
+                              child: LikeButton())
                           : Container(
                               decoration: BoxDecoration(
                                 border: Border.all(

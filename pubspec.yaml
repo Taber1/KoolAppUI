@@ -33,6 +33,9 @@ dependencies:
   flutter_swiper: ^1.1.6
   sms_autofill: ^1.2.7
   number_inc_dec: ^0.6.6
+  pimp_my_button: ^1.0.0
+  simple_animations: ^2.4.2
+  like_button: ^1.0.4
 
 dev_dependencies:
   flutter_test:
