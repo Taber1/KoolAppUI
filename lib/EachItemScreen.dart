@@ -15,11 +15,12 @@ class EachItemScreen extends StatefulWidget {
   _EachItemScreenState createState() => _EachItemScreenState();
 }
 
-class _EachItemScreenState extends State<EachItemScreen> {
+class _EachItemScreenState extends State<EachItemScreen>
+    with TickerProviderStateMixin {
   bool supplement = false;
   bool pressed = false;
   int _itemCount = 1;
-  Random random = Random();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -470,7 +471,6 @@ class _EachItemScreenState extends State<EachItemScreen> {
                       onTap: () {
                         setState(() {
                           pressed = !pressed;
-                          ParticleModel(random);
                         });
                       },
                       child: pressed
@@ -483,7 +483,10 @@ class _EachItemScreenState extends State<EachItemScreen> {
                               ),
                               height: 55,
                               width: 60,
-                              child: LikeButton())
+                              child: Icon(
+                                Icons.favorite,
+                                color: Colors.white,
+                              ))
                           : Container(
                               decoration: BoxDecoration(
                                 border: Border.all(

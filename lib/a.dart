@@ -100,5 +100,5 @@ class _ParticlesState extends State<Particles> {
   }
 }
 
-// Hey medhadiji, I tried whole day to implement favorite icon animation but couldn't implement it.
+// Hey medhadiji, I tried whole day to implement favorite icon animation but couldn't implement it, as it is .
 // I asked other developers for help, they suggest me to use rive.app (beta.rive.app). I tried to do it but this tool interface is like adobe

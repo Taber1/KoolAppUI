@@ -50,11 +50,6 @@ var item = [
         'https://cdn.pixabay.com/photo/2017/05/15/01/18/baked-2313462__340.jpg'
   },
   {
-    "name": 'Christmas Cookies',
-    "picture":
-        'https://cdn.pixabay.com/photo/2016/12/06/15/26/christmas-cookies-1886760__340.jpg'
-  },
-  {
     "name": 'Lasagna',
     "picture":
         'https://cdn.pixabay.com/photo/2016/12/11/22/41/lasagna-1900529__340.jpg'
