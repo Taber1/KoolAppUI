@@ -33,7 +33,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   sms_autofill: ^1.2.7
   number_inc_dec: ^0.6.6
-  gif_ani: ^0.0.2
+  flutter_gifimage: ^1.0.1
 
 dev_dependencies:
   flutter_test:

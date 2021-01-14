@@ -17,13 +17,6 @@ class _EachItemScreenState extends State<EachItemScreen>
   bool visible = false;
 
   @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    animation(visible);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -479,12 +472,11 @@ class _EachItemScreenState extends State<EachItemScreen>
                               pressed = !pressed;
                               visible = true;
                               animation(visible);
-                              Future.delayed(const Duration(milliseconds: 2000),
+                              Future.delayed(const Duration(milliseconds: 2200),
                                   () {
                                 setState(() {
                                   // Here you can write your code to update the state to show/hide the icon
                                   visible = false;
-                                  animation(visible);
                                 });
                               });
                             });
