@@ -168,6 +168,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  gif_ani:
+    dependency: "direct main"
+    description:
+      name: gif_ani
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   glob:
     dependency: transitive
     description:
@@ -201,13 +208,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.2"
-  like_button:
-    dependency: "direct main"
-    description:
-      name: like_button
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.4"
   logging:
     dependency: transitive
     description:
@@ -215,13 +215,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.4"
-  lottie:
-    dependency: "direct main"
-    description:
-      name: lottie
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.0+1"
   matcher:
     dependency: transitive
     description:
@@ -278,13 +271,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.3"
-  pimp_my_button:
-    dependency: "direct main"
-    description:
-      name: pimp_my_button
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   pin_input_text_field:
     dependency: transitive
     description:
@@ -320,20 +306,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.4"
-  sa_v1_migration:
-    dependency: transitive
-    description:
-      name: sa_v1_migration
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.2"
-  simple_animations:
-    dependency: "direct main"
-    description:
-      name: simple_animations
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.4.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -388,20 +360,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety.3"
-  supercharged:
-    dependency: transitive
-    description:
-      name: supercharged
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.12.0"
-  supercharged_dart:
-    dependency: transitive
-    description:
-      name: supercharged_dart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.4.0"
   sync_http:
     dependency: transitive
     description:

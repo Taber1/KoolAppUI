@@ -1,11 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:like_button/like_button.dart';
-import 'package:pimp_my_button/pimp_my_button.dart';
-
-import 'a.dart';
 
 class EachItemScreen extends StatefulWidget {
   String prodName;
