@@ -570,7 +570,6 @@ class _EachItemScreenState extends State<EachItemScreen>
             ),
           ),
           animation(visible),
-          Text("")
         ],
       ),
     );
