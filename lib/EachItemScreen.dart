@@ -471,7 +471,6 @@ class _EachItemScreenState extends State<EachItemScreen>
                             setState(() {
                               pressed = !pressed;
                               visible = true;
-                              animation(visible);
                               Future.delayed(const Duration(milliseconds: 2200),
                                   () {
                                 setState(() {
