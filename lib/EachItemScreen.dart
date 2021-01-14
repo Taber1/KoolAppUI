@@ -20,6 +20,7 @@ class _EachItemScreenState extends State<EachItemScreen>
   bool supplement = false;
   bool pressed = false;
   int _itemCount = 1;
+  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -413,156 +414,185 @@ class _EachItemScreenState extends State<EachItemScreen>
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        height: 120,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: Colors.grey,
-                blurRadius: 1,
-              ),
-            ],
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20))),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 5),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      bottomNavigationBar: Stack(
+        children: [
+          Container(
+            height: 120,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 1,
+                  ),
+                ],
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10.0, right: 10, top: 5),
+              child: Column(
                 children: [
-                  Text(
-                    "Quantite",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Quantite",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              Icons.remove_circle_outline,
+                              size: 30,
+                            ),
+                            onPressed: () => setState(() {
+                              _itemCount == 1 ? null : _itemCount--;
+                            }),
+                          ),
+                          Text(
+                            _itemCount.toString(),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          IconButton(
+                              icon: Icon(
+                                Icons.add_circle_outline,
+                                size: 30,
+                              ),
+                              onPressed: () => setState(() => _itemCount++))
+                        ],
+                      )
+                    ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.remove_circle_outline,
-                          size: 30,
-                        ),
-                        onPressed: () => setState(() {
-                          _itemCount == 1 ? null : _itemCount--;
-                        }),
-                      ),
-                      Text(
-                        _itemCount.toString(),
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      IconButton(
-                          icon: Icon(
-                            Icons.add_circle_outline,
-                            size: 30,
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              pressed = !pressed;
+                              visible = true;
+                              animation(visible);
+                              Future.delayed(const Duration(milliseconds: 2200),
+                                  () {
+                                setState(() {
+                                  // Here you can write your code to update the state to show/hide the icon
+                                  visible = false;
+                                });
+                              });
+                            });
+                          },
+                          child:
+                              // pressed
+                              //     ? Container(
+                              //         decoration: BoxDecoration(
+                              //           border: Border.all(
+                              //               width: 2, color: Colors.white),
+                              //           borderRadius: BorderRadius.circular(22),
+                              //           color: Color(0xffffd400),
+                              //         ),
+                              //         height: 55,
+                              //         width: 60,
+                              //         child: Icon(
+                              //           Icons.favorite,
+                              //           color: Colors.white,
+                              //         )):
+                              Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        width: 2, color: Color(0xffffd400)),
+                                    borderRadius: BorderRadius.circular(22),
+                                    color: Colors.white,
+                                  ),
+                                  height: 55,
+                                  width: 60,
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: Color(0xffffd400),
+                                  ))),
+                      RaisedButton(
+                        color: Colors.transparent,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)),
+                        padding: EdgeInsets.all(0.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(width: 5, color: Color(0xffffd400)),
+                            color: Colors.yellow,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(50.0)),
                           ),
-                          onPressed: () => setState(() => _itemCount++))
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          width: MediaQuery.of(context).size.width * 0.75,
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.all(5.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  'Ajouter au Panier',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17),
+                                ),
+                                RichText(
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                      text: "10.0",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    TextSpan(
+                                      text: "DT",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                      ),
+                                    ),
+                                  ]),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   )
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                      onTap: () {
-                        setState(() {
-                          pressed = !pressed;
-                        });
-                      },
-                      child: pressed
-                          ?
-                          // Container(
-                          //     decoration: BoxDecoration(
-                          //       border:
-                          //           Border.all(width: 2, color: Colors.white),
-                          //       borderRadius: BorderRadius.circular(22),
-                          //       color: Color(0xffffd400),
-                          //     ),
-                          //     height: 55,
-                          //     width: 60,
-                          //     child:
-                          Image.asset("assets/images/gif.gif")
-                          // Icon(
-                          //   Icons.favorite,
-                          //   color: Colors.white,
-                          // )
-                          // )
-                          : Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 2, color: Color(0xffffd400)),
-                                borderRadius: BorderRadius.circular(22),
-                                color: Colors.white,
-                              ),
-                              height: 55,
-                              width: 60,
-                              child: Icon(
-                                Icons.favorite,
-                                color: Color(0xffffd400),
-                              ))),
-                  RaisedButton(
-                    color: Colors.transparent,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0)),
-                    padding: EdgeInsets.all(0.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 5, color: Color(0xffffd400)),
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      ),
-                      height: MediaQuery.of(context).size.height * 0.06,
-                      width: MediaQuery.of(context).size.width * 0.75,
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Ajouter au Panier',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17),
-                            ),
-                            RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                  text: "10.0",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: "DT",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 17,
-                                  ),
-                                ),
-                              ]),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
+            ),
           ),
-        ),
+          animation(visible)
+        ],
       ),
     );
   }
+}
+
+Widget animation(bool visible) {
+  return visible
+      ? Positioned.fill(
+          bottom: 30,
+          child: Image.asset(
+            'assets/images/gif.gif',
+            color: Colors.yellow[400],
+            alignment: Alignment.bottomLeft,
+            fit: BoxFit.contain,
+          ),
+        )
+      : Text("");
 }
