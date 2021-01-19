@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         BorderRadius.all(Radius.circular(10.0)),
                                   ),
                                   height:
-                                      MediaQuery.of(context).size.height * 0.06,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   alignment: Alignment.center,
                                   child: const Text(
                                     "S'identifier",
