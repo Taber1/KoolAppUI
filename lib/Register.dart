@@ -26,6 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               padding: const EdgeInsets.only(bottom: 5.0),
               child: InkWell(
                 onTap: () {
+                  
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
